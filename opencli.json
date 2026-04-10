@@ -1,0 +1,217 @@
+{
+  "name": "cli-toolkit",
+  "description": "Complete AI-powered CLI toolkit for content generation, marketing, and analysis",
+  "version": "1.0.0",
+  "author": "CLI Team",
+  "homepage": "https://github.com/cli-toolkit",
+  "license": "MIT",
+  "type": "meta-package",
+  "
+": "Multi-CLI installation package containing all specialized CLI tools",
+
+  "tools": [
+    {
+      "name": "blog",
+      "description": "CLI to publish markdown articles to Dev.to with versioned snapshots",
+      "repository": "https://github.com/Awannaphasch2016/blog-cli",
+      "install": {
+        "method": "git",
+        "url": "https://github.com/Awannaphasch2016/blog-cli.git",
+        "commands": ["npm install", "npm link"]
+      },
+      "categories": ["content", "publishing", "blog"]
+    },
+    {
+      "name": "demand",
+      "description": "Generate rich audience context and buyer psychology for sales and marketing",
+      "repository": "https://github.com/Awannaphasch2016/demand-cli",
+      "install": {
+        "method": "git",
+        "url": "https://github.com/Awannaphasch2016/demand-cli.git",
+        "commands": ["npm install", "npm link"]
+      },
+      "categories": ["content", "marketing", "research"]
+    },
+    {
+      "name": "evaluate",
+      "description": "Advanced evaluation and optimization framework for AI-generated content",
+      "repository": "https://github.com/Awannaphasch2016/evaluate-cli",
+      "install": {
+        "method": "git",
+        "url": "https://github.com/Awannaphasch2016/evaluate-cli.git",
+        "commands": ["npm install", "npm link"]
+      },
+      "categories": ["evaluation", "ai", "optimization"]
+    },
+    {
+      "name": "meta-ads",
+      "description": "AI-powered Meta (Facebook/Instagram) ad copy generation and management",
+      "repository": "https://github.com/Awannaphasch2016/meta-ads-cli",
+      "install": {
+        "method": "git",
+        "url": "https://github.com/Awannaphasch2016/meta-ads-cli.git",
+        "commands": ["npm install", "npm link"]
+      },
+      "categories": ["marketing", "advertising", "ai", "social-media"]
+    },
+    {
+      "name": "optimize-prompt",
+      "description": "Intelligent prompt optimization and improvement system",
+      "repository": "https://github.com/Awannaphasch2016/optimize-prompt-cli",
+      "install": {
+        "method": "git",
+        "url": "https://github.com/Awannaphasch2016/optimize-prompt-cli.git",
+        "commands": ["npm install", "npm link"]
+      },
+      "categories": ["ai", "optimization", "prompting"]
+    },
+    {
+      "name": "spec",
+      "description": "Unified specification generator for all content types",
+      "repository": "https://github.com/Awannaphasch2016/spec-cli",
+      "install": {
+        "method": "git",
+        "url": "https://github.com/Awannaphasch2016/spec-cli.git",
+        "commands": ["npm install", "npm link"]
+      },
+      "categories": ["content", "development", "ai"]
+    },
+    {
+      "name": "supply",
+      "description": "Generate rich product/service context for sales and marketing delivery",
+      "repository": "https://github.com/Awannaphasch2016/supply-cli",
+      "install": {
+        "method": "git",
+        "url": "https://github.com/Awannaphasch2016/supply-cli.git",
+        "commands": ["npm install", "npm link"]
+      },
+      "categories": ["content", "marketing"]
+    }
+  ],
+
+  "installation": {
+    "method": "batch",
+    "description": "Install all CLI tools in the toolkit",
+    "commands": [
+      "# Install blog CLI",
+      "git clone https://github.com/Awannaphasch2016/blog-cli.git ~/cli-tools/blog-cli",
+      "cd ~/cli-tools/blog-cli && npm install && npm link",
+
+      "# Install demand CLI",
+      "git clone https://github.com/Awannaphasch2016/demand-cli.git ~/cli-tools/demand-cli",
+      "cd ~/cli-tools/demand-cli && npm install && npm link",
+
+      "# Install evaluate CLI",
+      "git clone https://github.com/Awannaphasch2016/evaluate-cli.git ~/cli-tools/evaluate-cli",
+      "cd ~/cli-tools/evaluate-cli && npm install && npm link",
+
+      "# Install meta-ads CLI",
+      "git clone https://github.com/Awannaphasch2016/meta-ads-cli.git ~/cli-tools/meta-ads-cli",
+      "cd ~/cli-tools/meta-ads-cli && npm install && npm link",
+
+      "# Install optimize-prompt CLI",
+      "git clone https://github.com/Awannaphasch2016/optimize-prompt-cli.git ~/cli-tools/optimize-prompt-cli",
+      "cd ~/cli-tools/optimize-prompt-cli && npm install && npm link",
+
+      "# Install spec CLI",
+      "git clone https://github.com/Awannaphasch2016/spec-cli.git ~/cli-tools/spec-cli",
+      "cd ~/cli-tools/spec-cli && npm install && npm link",
+
+      "# Install supply CLI",
+      "git clone https://github.com/Awannaphasch2016/supply-cli.git ~/cli-tools/supply-cli",
+      "cd ~/cli-tools/supply-cli && npm install && npm link"
+    ]
+  },
+
+  "workflows": {
+    "content_creation": {
+      "description": "Complete content creation pipeline",
+      "steps": [
+        "spec generate 'blog post about AI' --type blog > blog-spec.yaml",
+        "blog new 'AI in Modern Development' --spec blog-spec.yaml",
+        "evaluate score draft.md --criteria quality,engagement",
+        "blog publish draft.md"
+      ]
+    },
+    "marketing_campaign": {
+      "description": "End-to-end marketing campaign creation",
+      "steps": [
+        "demand generate 'tech-savvy millennials' > audience.json",
+        "supply generate 'productivity app' > product.json",
+        "spec generate 'social media ads' --type ads > ad-spec.yaml",
+        "meta-ads generate ad-spec.yaml --variants 3"
+      ]
+    },
+    "optimization_loop": {
+      "description": "Content optimization and improvement cycle",
+      "steps": [
+        "evaluate analyze existing-content.md > analysis.json",
+        "optimize-prompt improve system-prompt.txt --based-on analysis.json",
+        "spec generate improved-content --prompt optimized-prompt.txt",
+        "evaluate compare original.md improved.md"
+      ]
+    }
+  },
+
+  "environment": {
+    "required_variables": [
+      "OPENROUTER_API_KEY"
+    ],
+    "optional_variables": [
+      "SUPABASE_URL",
+      "SUPABASE_ANON_KEY",
+      "DEVTO_API_KEY",
+      "OPENAI_API_KEY",
+      "META_ACCESS_TOKEN",
+      "AWS_ACCESS_KEY_ID",
+      "AWS_SECRET_ACCESS_KEY"
+    ]
+  },
+
+  "ai_discovery": {
+    "categories": [
+      "content creation",
+      "marketing automation",
+      "ai optimization",
+      "social media",
+      "publishing",
+      "evaluation",
+      "cli toolkit"
+    ],
+    "capabilities": [
+      "Generate comprehensive content specifications",
+      "Create audience psychology profiles",
+      "Produce product positioning contexts",
+      "Generate optimized ad copy for Meta platforms",
+      "Evaluate and score AI-generated content",
+      "Optimize prompts for better AI performance",
+      "Publish content to multiple platforms",
+      "Automate marketing campaign creation",
+      "Batch process content generation workflows"
+    ],
+    "use_cases": [
+      "Complete content creation pipeline",
+      "Marketing campaign automation",
+      "AI-powered content optimization",
+      "Multi-platform content publishing",
+      "Audience research and targeting",
+      "Product marketing automation",
+      "Content quality assurance",
+      "Prompt engineering workflows"
+    ]
+  },
+
+  "opencli": {
+    "compatible": true,
+    "version": "1.0",
+    "features": {
+      "discovery": true,
+      "auto_install": true,
+      "passthrough": true,
+      "ai_integration": true,
+      "chaining": true,
+      "parallel_execution": true,
+      "batch_installation": true
+    }
+  }
+}
