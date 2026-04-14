@@ -86,6 +86,35 @@
         "commands": ["npm install", "npm link"]
       },
       "categories": ["content", "marketing"]
+    },
+    {
+      "name": "video-gen",
+      "description": "Multi-provider video generation CLI with AI agent discoverability",
+      "repository": "https://github.com/Awannaphasch2016/videogen",
+      "install": {
+        "method": "local",
+        "path": "~/dev/videogen",
+        "commands": ["npm install"]
+      },
+      "categories": ["media", "generation", "ai"],
+      "environment": {
+        "required": ["FAL_KEY"],
+        "optional": ["VIDEOGEN_API_URL", "VIDEOGEN_PROVIDER", "VIDEOGEN_MODEL"]
+      }
+    },
+    {
+      "name": "webgen",
+      "description": "Generate multipage websites from markdown content using serverless functions",
+      "repository": "https://github.com/webgen-cli/webgen",
+      "install": {
+        "method": "local",
+        "path": "~/dev/webgen",
+        "commands": ["npm install", "npm link"]
+      },
+      "categories": ["website", "generation", "content", "serverless"],
+      "environment": {
+        "optional": ["AWS_ACCESS_KEY_ID", "AWS_SECRET_ACCESS_KEY", "WEBGEN_FUNCTION_URL"]
+      }
     }
   ],
 
@@ -119,7 +148,17 @@
 
       "# Install supply CLI",
       "git clone https://github.com/Awannaphasch2016/supply-cli.git ~/cli-tools/supply-cli",
-      "cd ~/cli-tools/supply-cli && npm install && npm link"
+      "cd ~/cli-tools/supply-cli && npm install && npm link",
+
+      "# Install video-gen CLI (local)",
+      "cd ~/dev/videogen && npm install",
+      "# Add to OpenCLI registry",
+      "echo '- binary: /home/anak/dev/videogen/video-gen-launcher.js\n  description: Multi-provider video generation CLI with AI agent discoverability\n  install:\n    darwin: echo \"Dependencies already installed\"\n    linux: echo \"Dependencies already installed\"\n    win32: echo \"Dependencies already installed\"\n  name: video-gen' >> ~/.opencli/external-clis.yaml",
+
+      "# Install webgen CLI (local)",
+      "cd ~/dev/webgen && npm install && npm link",
+      "# Register webgen with OpenCLI",
+      "cd ~/dev/webgen && opencli register webgen"
     ]
   },
 
@@ -150,6 +189,15 @@
         "spec generate improved-content --prompt optimized-prompt.txt",
         "evaluate compare original.md improved.md"
       ]
+    },
+    "website_creation": {
+      "description": "Complete website generation from content brief",
+      "steps": [
+        "echo '# Business Name\\nDescription' > business-brief.md",
+        "webgen generate business-brief.md --output ./website",
+        "webgen preview --open",
+        "evaluate score website/index.html --criteria design,content,seo"
+      ]
     }
   },
 
@@ -164,7 +212,11 @@
       "OPENAI_API_KEY",
       "META_ACCESS_TOKEN",
       "AWS_ACCESS_KEY_ID",
-      "AWS_SECRET_ACCESS_KEY"
+      "AWS_SECRET_ACCESS_KEY",
+      "FAL_KEY",
+      "VIDEOGEN_API_URL",
+      "VIDEOGEN_PROVIDER",
+      "VIDEOGEN_MODEL"
     ]
   },
 
@@ -176,6 +228,9 @@
       "social media",
       "publishing",
       "evaluation",
+      "video generation",
+      "media creation",
+      "website generation",
       "cli toolkit"
     ],
     "capabilities": [
@@ -186,8 +241,13 @@
       "Evaluate and score AI-generated content",
       "Optimize prompts for better AI performance",
       "Publish content to multiple platforms",
+      "Generate videos from text descriptions",
       "Automate marketing campaign creation",
-      "Batch process content generation workflows"
+      "Batch process content generation workflows",
+      "Create video content for marketing campaigns",
+      "Generate multipage websites from markdown content",
+      "Create professional business websites with serverless functions",
+      "Preview websites locally with development server"
     ],
     "use_cases": [
       "Complete content creation pipeline",
@@ -197,7 +257,12 @@
       "Audience research and targeting",
       "Product marketing automation",
       "Content quality assurance",
-      "Prompt engineering workflows"
+      "Prompt engineering workflows",
+      "Video content creation for marketing",
+      "AI-powered video generation workflows",
+      "Business website generation from brief",
+      "Rapid website prototyping",
+      "Converting content briefs to professional websites"
     ]
   },
 

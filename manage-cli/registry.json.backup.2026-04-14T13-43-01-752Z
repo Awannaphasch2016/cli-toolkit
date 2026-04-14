@@ -1,0 +1,20 @@
+{
+  "version": "1.0.0",
+  "opencli": {
+    "blog": {
+      "path": "/home/anak/dev/blog-cli/blog-launcher.js",
+      "repo": null,
+      "description": "CLI to publish markdown articles to Dev.to with versioned snapshots in Supabase"
+    },
+    "skills": {
+      "path": "/home/anak/dev/skills-toolkit/skills-launcher.js",
+      "repo": null,
+      "description": "Skills management CLI for development workflows"
+    },
+    "manage-cli": {
+      "path": "/home/anak/dev/cli-toolkit/manage-cli/manage-launcher.js",
+      "repo": null,
+      "description": "Simple CLI management for OpenCLI registry"
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "name": "manage-cli",
+  "version": "1.0.0",
+  "description": "Simple CLI management for OpenCLI registry",
+  "type": "module",
+  "main": "manage-launcher.js",
+  "bin": {
+    "manage-cli": "./bin/manage.mjs"
+  },
+  "scripts": {
+    "start": "node bin/manage.mjs",
+    "setup": "./scripts/setup.sh",
+    "migrate": "node scripts/migrate-to-database.mjs",
+    "rollback": "node scripts/rollback.mjs",
+    "test:migration": "node test/test-migration.mjs",
+    "test:database": "node -e \"import('./src/lib/database-manager.mjs').then(({DatabaseCLIManager}) => { const db = new DatabaseCLIManager(); db.testConnection().then(r => console.log(r.success ? '✅ Database OK' : '❌ Database Failed')); })\"",
+    "help": "node bin/manage.mjs --help"
+  },
+  "keywords": [
+    "cli",
+    "opencli",
+    "registry",
+    "management"
+  ],
+  "author": "Anak",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.103.0",
+    "dotenv": "^16.0.0",
+    "pg": "^8.20.0"
+  }
+}

@@ -1,6 +1,6 @@
 # CLI Toolkit
 
-Complete AI-powered CLI toolkit for content generation, marketing, and analysis. Install all 7 specialized CLI tools with one command using OpenCLI.
+Complete AI-powered CLI toolkit for content generation, marketing, and analysis. Install all 8 specialized CLI tools with one command using OpenCLI.
 
 ## 🚀 Quick Install
 
@@ -8,7 +8,7 @@ Complete AI-powered CLI toolkit for content generation, marketing, and analysis.
 opencli install https://github.com/Awannaphasch2016/cli-toolkit
 ```
 
-This will install all 7 CLI tools:
+This will install all 8 CLI tools:
 
 - **blog** - Publish markdown articles to Dev.to with Supabase snapshots
 - **demand** - Generate audience psychology and buyer context
@@ -17,6 +17,7 @@ This will install all 7 CLI tools:
 - **optimize-prompt** - Intelligent prompt optimization system
 - **spec** - Universal specification generator
 - **supply** - Product/service context generation
+- **webgen** - Generate multipage websites from markdown content
 
 ## 📋 Individual Installation
 
@@ -26,6 +27,7 @@ You can also install tools individually:
 opencli install https://github.com/Awannaphasch2016/blog-cli
 opencli install https://github.com/Awannaphasch2016/demand-cli
 opencli install https://github.com/Awannaphasch2016/supply-cli
+opencli register webgen  # For local webgen installation
 # ... etc
 ```
 
